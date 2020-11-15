@@ -1,0 +1,141 @@
+body {
+    background-color: rgba(0,0,0,0.8);
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+h1, p {
+    margin: 0;
+    padding: 0;
+}
+.conteudo {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 4fr 50px;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer"
+    ;
+}
+.header {
+    grid-area: header;
+    background-color: black;
+    border-bottom: whitesmoke 1px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+.main {
+    padding: 40px;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px 90px 90px 90px;
+    gap: 20px;
+    grid-template-areas: 
+    "youtube"
+    "facebook"
+    "instagram"
+    "twitter"
+    ;
+}
+.facebook {
+    grid-area: facebook;
+    background-color: rgba(0,0,0,0.7);
+    border: whitesmoke 1px solid;
+}
+.instagram {
+    grid-area: instagram;
+    background-color: rgba(0,0,0,0.7);
+    border: whitesmoke 1px solid;
+}
+.twitter {
+    grid-area: twitter;
+    background-color: rgba(0,0,0,0.7);
+    border: whitesmoke 1px solid;
+}
+.youtube {
+    grid-area: youtube;
+    background-color: rgba(0,0,0,0.7);
+    border: whitesmoke 1px solid;
+}
+.footer {
+    grid-area: footer;
+    background-color: black;
+    border-top: whitesmoke 1px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+.white {
+    color: white;
+}
+h1 {
+    font-size: 50px;
+}
+img {
+    width: 70px;
+    border-right: solid whitesmoke 1px;
+    padding-right: 10px;
+}
+main div  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+main div a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+main p {
+    color: whitesmoke;
+    font-size: 40px;
+    padding-left: 10px;
+}
+
+
+
+
+/** Computador **/
+@media only screen and (min-width: 600px) {
+    .conteudo {
+        height: 100%;
+        display: grid;
+        grid-template-columns: minmax(50px, 200px) 5fr minmax(50px, 200px);
+        grid-template-rows: 150px 4fr 50px;
+        grid-template-areas:
+        "header header header"
+        ". main ."
+        "footer footer footer"
+        ;
+    }
+    .main {
+        align-self: center;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 100px;
+        grid-template-areas:
+        "youtube twitter" 
+        "facebook instagram"
+        ;
+    }
+    main div {
+        
+    }
+    h1 {
+        font-size: 45px;
+    }
+    img {
+        width: 80px;
+    }
+}
